@@ -3,7 +3,6 @@
  * times_table - prints the 9 times table from zero
  * rone = row, cone = column, d = digits of current result
  * Return: times table
- * add extra space after every digit
  */
 void times_table(void)
 {
@@ -18,7 +17,7 @@ for (cone = 1; cone < 9; cone++)
 d = (rone * cone);
 if ((d / 10) > 0)
 {
--putchar((d / 10) + '0');
+_putchar((d / 10) + '0');
 }
 else
 {
