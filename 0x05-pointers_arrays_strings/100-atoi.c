@@ -23,5 +23,12 @@ isi = 1;
 ni = (ni * 10) + (s[c]) - '0';
 c++;
 }
+if (isi == 1)
+{
+break;
 }
+c++;
+}
+ni += min;
+return (ni);
 }
