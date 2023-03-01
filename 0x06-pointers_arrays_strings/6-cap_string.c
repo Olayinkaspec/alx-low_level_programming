@@ -6,24 +6,27 @@
  */
 char *cap_string(char *str)
 {
-int i;
-int j;
-char c[] = {44, 59, 46, 33, 63, 34, 40, 41, 123, 125, 32, 10, 9};
-i = 0;
-while (str[i] != '\0')
+int index = 0;
+while (str[index])
 {
-if (i == 0 && str[i] >= 97 && str[i] <= 122)
-str[i] = str[i] - 32;
-}
-j = 0;
-while (c[j] != '\0')
-{
-if (c[j] == str[i] && (str[i + 1] >= 97 && str[i + 1] <= 122))
-{
-str[i + 1] = str[i + 1] - 32;
-j++;
-}
-i++;
+while (!(str[index] >= 'a' && str[index] <= 'z'))
+index++;
+if (str[index - 1] == ' ' ||
+str[index - 1] == '\t' ||
+str[index - 1] == '\n' ||
+str[index - 1] == ',' ||
+str[index - 1] == ';' ||
+str[index - 1] == '.' ||
+str[index - 1] == '!' ||
+str[index - 1] == '?' ||
+str[index - 1] == '"' ||
+str[index - 1] == '(' ||
+str[index - 1] == ')' ||
+str[index - 1] == '{' ||
+str[index - 1] == '}' ||
+index == 0)
+str[index] -= 32;
+index++;
 }
 return (str);
 }
